@@ -4,7 +4,7 @@ import Master from "./components/Master";
 import {useEffect,useState} from "react"
 import io from "socket.io-client";
 import config from "./config.json"
-const socket = io.connect("http://"+config.ip_address+":3001");
+const socket = io.connect("https://server-npe.herokuapp.com");
 
 function App() {
   
