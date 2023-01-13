@@ -48,7 +48,7 @@ const Master = (props) => {
        setInputOut(input1);
     }
     const generateData = () =>{
-         fetch('http://localhost:3001/exec/'+'select * from '+props.tablename)
+         fetch('https://server-npe.herokuapp.com/exec/'+'select * from '+props.tablename)
         .then(response => response.json())
         .then(data => {setTable_Data(data);console.log(data)});
     }
@@ -82,7 +82,7 @@ const Master = (props) => {
         })
         if (updateVal!==''){
             querycol='delete from '+props.tablename+' '+updateVal;
-            fetch('http://localhost:3001/insert/'+querycol+'/select * from '+props.tablename)
+            fetch('https://server-npe.herokuapp.com/insert/'+querycol+'/select * from '+props.tablename)
         .then(response => response.json())
         .then(data => {setTable_Data(data);console.log(data)});
             // props.socket.emit('insert',{insert:querycol,select:'select * from '+props.tablename})
@@ -133,7 +133,7 @@ const Master = (props) => {
         }
         
         // props.socket.emit('insert',{insert:querycol,select:'select * from '+props.tablename})
-        fetch('http://localhost:3001/insert/'+querycol+'/select * from '+props.tablename)
+        fetch('https://server-npe.herokuapp.com/insert/'+querycol+'/select * from '+props.tablename)
         .then(response => response.json())
         .then(data => {setTable_Data(data);console.log(data)});
     };
